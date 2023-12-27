@@ -5,7 +5,7 @@ regions:
     #- key: tags.Name
 filters:
   tag:Name:
-    - slave_redis
+    - redis
   #instance-state-name : running
 compose:
   ansible_host: private_ip_address
