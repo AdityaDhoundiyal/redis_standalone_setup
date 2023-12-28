@@ -3,11 +3,17 @@
 - name: Update apt cache
   apt:
     update_cache: yes
-
-- name: Install Redis
+  when: ansible_os_family == 'Debian'
+- name: Install Redis for Ubuntu
   apt:
     name: redis-server
     state: present
+  when: ansible_os_family == 'Debian'
+- name: install Redis for Red Hat
+  yum:
+    name: redis
+    state: present
+  when: ansible_os_family == 'RedHat'
 
 - name: Set Redis password in Redis configuration
   lineinfile:
