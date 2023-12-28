@@ -1,5 +1,5 @@
 ---
 - hosts: aws_ec2
-  become: true
+  become: yes
   roles:
     - redis_role
