@@ -1,9 +1,5 @@
 ---
 # tasks file for redis_role
-- name: Set remote_user based on OS
-  set_fact:
-    ansible_ssh_user: "{{ 'ubuntu' if ansible_os_family == 'Debian' else 'ec2-user' }}"
-
 - name: Update apt cache
   apt:
     update_cache: yes
